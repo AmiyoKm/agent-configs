@@ -1,0 +1,143 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+[projects."/home/amiyo"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/.codex"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/sazim/project-luminar-platform"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/lune/pulse-merchat-portal-fe"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/sazim/project-luminar-platform-2"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/lune/lune-hub-nuxt"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/sazim/nestjs-nextjs-monorepo-starter-template"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/personal"]
+trust_level = "trusted"
+
+[projects."/home/amiyo/Projects/personal/store"]
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "git-branch", "pull-request-number", "weekly-limit", "used-tokens", "five-hour-limit"]
+status_line_use_colors = true
+
+[notice.model_migrations]
+"gpt-5.4-mini" = "gpt-5.6-luna"
+"gpt-5.4" = "gpt-5.6-terra"
+
+[mcp_servers.crtk]
+command = "/home/amiyo/code-review-tribal-knowledge/.venv/bin/crtk"
+args = ["--config", "/home/amiyo/code-review-tribal-knowledge/crtk.toml", "serve"]
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-analytics-dashboard/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-business-review/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-design-report/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-experiment-analysis/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-financial-budget/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-investment-committee-memo/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-market-trends-report/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-minimal-letterhead/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-calendar/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-operating-review/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-kickoff/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-project-tracker/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-sales-pipeline/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-dark-mode/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-simple-light-mode/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-strategy-memorandum/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-team-alignment/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-three-statement-forecast/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/home/amiyo/.codex/plugins/cache/openai-curated-remote/plugin-management/0.1.0/skills/plugin-management/SKILL.md"
+enabled = false
+
+[marketplaces.claude-plugins-official]
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[plugins."code-simplifier@claude-plugins-official"]
+enabled = true
+
+[plugins."typescript-lsp@claude-plugins-official"]
+enabled = true
+
+[features]
+apps = false
+rmcp_client = true
+
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+enabled = false

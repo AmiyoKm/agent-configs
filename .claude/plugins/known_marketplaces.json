@@ -1,0 +1,10 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/home/amiyo/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-08-22T17:58:40.379Z"
+  }
+}

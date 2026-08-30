@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+MODEL="${OC_MODEL:-opencode/big-pickle}"
+AGENT="build"
+DIR="$PWD"
+SESSION=""
+CONTINUE=""
+
+usage() {
+  cat >&2 <<'USAGE'
+oc-ask [-m provider/model] [-a agent] [-d dir] [-s sessionID] [-c] [prompt...]
+Prompt may be given as args or on stdin. Prints the model's final text.
+Env: OC_MODEL sets the default model.
+USAGE
+  exit 2
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -m|--model)   MODEL="$2"; shift 2 ;;
+    -a|--agent)   AGENT="$2"; shift 2 ;;
+    -d|--dir)     DIR="$2"; shift 2 ;;
+    -s|--session) SESSION="$2"; shift 2 ;;
+    -c|--continue) CONTINUE=1; shift ;;
+    -l|--list)    exec opencode models ;;
+    -h|--help)    usage ;;
+    --)           shift; break ;;
+    -*)           echo "unknown flag: $1" >&2; usage ;;
+    *)            break ;;
+  esac
+done
+
+PROMPT="$*"
+if [[ -z "${PROMPT// }" ]]; then
+  PROMPT="$(cat)"
+fi
+if [[ -z "${PROMPT// }" ]]; then
+  echo "oc-ask: empty prompt" >&2
+  exit 2
+fi
+
+args=(run -m "$MODEL" --agent "$AGENT" --dir "$DIR")
+[[ -n "$SESSION" ]] && args+=(-s "$SESSION")
+[[ -n "$CONTINUE" ]] && args+=(-c)
+
+out="$(printf '%s' "$PROMPT" | opencode "${args[@]}" 2>&1)"
+rc=$?
+
+printf '%s\n' "$out" \
+  | sed -e 's/\x1b\[[0-9;]*[a-zA-Z]//g' -e 's/\r$//' \
+  | awk 'NR<=4 && ($0 ~ /^> / || $0 ~ /^[[:space:]]*$/) {next} {print}'
+
+exit $rc

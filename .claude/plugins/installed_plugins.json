@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "plugins": {
+    "context7@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/amiyo/.claude/plugins/cache/claude-plugins-official/context7/unknown",
+        "version": "unknown",
+        "installedAt": "2026-08-23T07:49:28.498Z",
+        "lastUpdated": "2026-08-23T07:49:28.498Z"
+      }
+    ],
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/amiyo/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-08-23T08:37:03.061Z",
+        "lastUpdated": "2026-08-23T08:37:03.061Z"
+      }
+    ],
+    "code-simplifier@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/amiyo/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-08-23T08:37:43.872Z",
+        "lastUpdated": "2026-08-23T08:37:43.872Z"
+      }
+    ],
+    "figma@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/amiyo/.claude/plugins/cache/claude-plugins-official/figma/2.2.96",
+        "version": "2.2.96",
+        "installedAt": "2026-08-23T11:36:53.648Z",
+        "lastUpdated": "2026-08-23T11:36:53.648Z",
+        "gitCommitSha": "7f6562c4900fafb46e5e8fd3cc8ced954779bab3"
+      }
+    ]
+  }
+}

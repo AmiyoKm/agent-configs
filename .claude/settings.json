@@ -1,0 +1,90 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(~/.claude/bin/oc-ask:*)",
+      "Bash(opencode models:*)",
+      "Bash(opencode run:*)"
+    ]
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/no-code-comments.py",
+            "timeout": 10,
+            "statusMessage": "Checking for comments"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/bash-no-comments.py",
+            "timeout": 10,
+            "statusMessage": "Checking for comments"
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/subagent-model.py",
+            "timeout": 10,
+            "statusMessage": "Checking subagent model"
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "fresh"
+  },
+  "enableArtifact": false,
+  "enableWorkflows": false,
+  "workflowKeywordTriggerEnabled": false,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "figma@claude-plugins-official": false
+  },
+  "promptSuggestionEnabled": false,
+  "awaySummaryEnabled": false,
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "editorMode": "normal",
+  "verbose": false,
+  "switchModelsOnFlag": false,
+  "autoContinueAtUsageLimit": true,
+  "inputNeededNotifEnabled": true,
+  "mcpServers": {
+    "crtk": {
+      "command": "/home/amiyo/code-review-tribal-knowledge/.venv/bin/crtk",
+      "args": [
+        "--config",
+        "/home/amiyo/code-review-tribal-knowledge/crtk.toml",
+        "serve"
+      ]
+    }
+  },
+  "outputStyle": "Terse",
+  "env": {
+    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "2",
+    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "4"
+  }
+}
